@@ -42,7 +42,7 @@
             <!--android:resource="@drawable/ic_pets"/>-->
 
         <activity
-            android:name=".activities.AccountBalanceActivity"
+            android:name=".activities.ItchTraderActivity"
             android:label="@string/title_activity_account_balance"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

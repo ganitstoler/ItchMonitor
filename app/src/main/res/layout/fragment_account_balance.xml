@@ -14,20 +14,51 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="itche.home.itchmonitore.activities.AccountBalanceActivity$PlaceholderFragment">
+        android:background="#ffffff"
+        android:padding="@dimen/activity_horizontal_margin"
+        tools:context="itche.home.itchmonitore.activities.ItchTraderActivity$PlaceholderFragment">
 
         <TextView
             android:id="@+id/section_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_height="40dp"
+            android:text="@string/account_balance_title"
+            android:textSize="25sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintTop_creator="1"/>
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/estimated_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/section_label"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:text='@{@string/account_balance_estimated_value(content.btc, content.usd)}'
+            tools:text = "Estimated Value: 100.151651534 BTC / 100.151651534 USD"
+            />
+
+        <TextView
+            android:id="@+id/last_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/estimated_value"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:text='@{content.updatedAt}'
+            tools:text = "2018-01-05 20:24:48"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/currencies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/last_update"
+            />
+
 
     </android.support.constraint.ConstraintLayout>
 

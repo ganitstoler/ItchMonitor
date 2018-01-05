@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_account_balance">AccountBalanceActivity</string>
+    <string name="account_balance_title">ACCOUNT BALANCE</string>
+    <string name="account_balance_estimated_value" formatted="false">Estimated Value: %f BTC / %f USD</string>
 </resources>

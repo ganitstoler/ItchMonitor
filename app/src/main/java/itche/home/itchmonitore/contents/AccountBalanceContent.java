@@ -19,7 +19,7 @@ public class AccountBalanceContent extends BaseObservable {
     private float usd;
     private float btc;
     private List<Currency> currencies;
-    private String updatedAt;
+    private String updatedAt = "";
 
     @Bindable
     public float getUsd() {
@@ -38,7 +38,7 @@ public class AccountBalanceContent extends BaseObservable {
 
     public void setBtc(float btc) {
         this.btc = btc;
-        notifyPropertyChanged(BR.usd);
+        notifyPropertyChanged(BR.btc);
     }
 
     @Bindable

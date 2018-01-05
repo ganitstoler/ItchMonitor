@@ -22,7 +22,7 @@ public class AppDataManager {
     private static final String PREF_DB_KEY_PUSH_ID = "push_id";
     private final SharedPreferences mPrefs;
     private String mPushId;
-    private AccountBalanceContent mAccountBalanceContent;
+    private AccountBalanceContent mAccountBalanceContent = new AccountBalanceContent();
 
     public static AppDataManager getInstance() {
         return InstanceHolder.INSTANCE;
@@ -33,13 +33,9 @@ public class AppDataManager {
         mPrefs = context.getSharedPreferences(PREF_DB_NAME, Context.MODE_PRIVATE);
     }
 
-    @Nullable
+    @NonNull
     public AccountBalanceContent getAccountBalanceContent() {
         return mAccountBalanceContent;
-    }
-
-    public void setAccountBalanceContent(AccountBalanceContent mAccountBalanceContent) {
-        this.mAccountBalanceContent = mAccountBalanceContent;
     }
 
     public String getPushId() {
@@ -55,8 +51,6 @@ public class AppDataManager {
             mPrefs.edit().putString(PREF_DB_KEY_PUSH_ID, pushId).apply();
             mPushId = pushId;
         }
-
-
     }
 
     private static final class InstanceHolder {

@@ -9,7 +9,7 @@ import android.util.Log;
 import java.util.Objects;
 
 import itche.home.itchmonitore.R;
-import itche.home.itchmonitore.activities.AccountBalanceActivity;
+import itche.home.itchmonitore.activities.ItchTraderActivity;
 
 /**
  * Receiver used to restart the app.
@@ -26,7 +26,7 @@ public final class AutoRestartReceiver extends BroadcastReceiver {
         Log.d(TAG, "onReceive() called with: context = [" + context + "], intent = [" + intent + "]");
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             Log.i(TAG, "onReceive: received BOOT_COMPLETED");
-            restartAppIfNeeded(context, AccountBalanceActivity.createRebootIntent(context));
+            restartAppIfNeeded(context, ItchTraderActivity.createRebootIntent(context));
         }
         else if (Objects.equals(context.getString(R.string.intent_action_crash), intent.getAction())) {
             Log.i(TAG, "onReceive: received crash intent");
@@ -36,7 +36,7 @@ public final class AutoRestartReceiver extends BroadcastReceiver {
 //            Device mockDevice = DeviceManager.getMockDevice();
 //            mockDevice.sendEventToServer(new Report(Report.EventConstants.EVENT_APP_CRASHED, Report.EventConstants.TYPE_ERROR, dataStr, false, false));
 
-            restartAppIfNeeded(context, AccountBalanceActivity.createCrashRecoveryIntent(context));
+            restartAppIfNeeded(context, ItchTraderActivity.createCrashRecoveryIntent(context));
         }
     }
 
